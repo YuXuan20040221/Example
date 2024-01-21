@@ -7,3 +7,4 @@ NINI is doggit push -u origin maingit push -u origin main!
 NINI is Doggit commit -m first commitgit commit -m first commit
 NINI
 NINIDOG
+# Example
