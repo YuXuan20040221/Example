@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        * {
+            /*border-box:元素大小包含border裡所有物件*/
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(243, 243, 243);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .menu::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .header1 {
+            background-color: #3cb4d6;
+            color: #fff7c7;
+            width: 70%;
+            height: 120px;
+            float: left;
+        }
+
+        .header2 {
+            background-color: #ffffff;
+            color: #263c74;
+            padding: 0;
+            width: 30%;
+            height: 120px;
+            float: right;
+            text-align: right;
+            font-size: large;
+        }
+
+        .header2 img {
+            width: 65px;
+            padding-right: 10px;
+        }
+
+        .header2 button {
+            width: 70px;
+            height: 45px;
+            float: right;
+            margin: 10px;
+            font-size: 20px;
+            color: #ffffff;
+            background-color: #2398b8;
+            border-radius: 7px;
+            border-style: none;
+        }
+
+        .menu {
+            background-color: #ffffff;
+        }
+
+
+        .menu li {
+            float: left;
+            display: block;
+            color: #59290b;
+            margin-top: 10px;
+            padding: 20px;
+            border-radius: 5px;
+            font-size: 25px;
+        }
+
+        .menu li:hover {
+            background-color: #29afd4;
+            color: #fff7c7;
+        }
+
+        .menu2 {
+            background-color: #ffffff;
+            margin: 40px;
+            border: #2398b8 groove 2px;
+            border-radius: 7px;
+            width: 15%;
+            padding-inline: 15px;
+            padding-top: 35px;
+            padding-bottom: 35px;
+        }
+
+        .menu2 ul {
+            margin: 0;
+            padding: 0;
+
+        }
+
+        .menu2 li {
+            display: block;
+            color: #000000;
+            padding: 5px;
+            border-radius: 5px;
+            font-size: 15px;
+        }
+
+        .menu2 li:active {
+            color: #ffffff;
+            background-color: #29afd4;
+        }
+
+        .menu2::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .menu3 {
+            border: #999999 solid 1px;
+            margin-inline: 200px;
+            margin-top: 150px;
+            height: 50px;
+            padding: 5px;
+        }
+
+        .menu3 ul{
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+            overflow: hidden;
+        }
+
+        .menu3 li {
+            float: inline-start;
+            display: block;
+            color: #000000;
+            border-radius: 5px;
+            font-size: 25px;
+            width: 25%;
+            text-align: center;
+        }
+
+        .menu3 li:active {
+            color: #ffffff;
+            background-color: #29afd4;
+        }
+
+        .main {
+            margin: 20px;
+            margin-top: 40px;
+            border: #197696 25px;
+            border-style: solid;
+            border-radius: 20px;
+            float: right;
+            width: 75%;
+            height: 800px;
+            padding-top: 20px;
+            padding-inline: 60px;
+            background-color: #ffffff;
+        }
+
+        .footer {
+            background-color: #197696;
+            color: #ffffff;
+            text-align: center;
+            font-size: 12px;
+            padding: 15px;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <div class="header1">
+            <h3 style="margin-bottom: 0%;margin-left: 20px;">國立臺中教育大學 National Taichong University of Education</h3>
+            <h1 style="margin-top: 0%;margin-left: 40px;font-size: 40px;">資訊工程學系 <span
+                    style="font-size: 20px;">Department of Computer Science</span></h1>
+        </div>
+
+        <div class="header2">
+            <p>繁體中文 Traditional Chinese | 英文 English</p>
+            <img src="https://cs.ntcu.edu.tw/_app/assets/ntcuCs-183fa630.png">
+            <img src="https://cs.ntcu.edu.tw/_app/assets/ntcu-26ab0f69.png">
+            <button>login</button>
+        </div>
+    </div>
+
+
+    <ul class="menu">
+        <li class="menu">訊息公告</li>
+        <li class="menu">系所成員</li>
+        <li class="menu">系所介紹</li>
+        <li class="menu">招生資訊</li>
+        <li class="menu">學生資訊</li>
+        <li class="menu">學術研究</li>
+        <li class="menu">活動紀錄</li>
+        <li class="menu">法規表單</li>
+    </ul>
+
+    <div style="margin-left: 40px; margin-top: 30px; clear: both;">
+        <span style="color: #2398b8; font-size: large;">首頁 </span><img
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAATgAAAD0BAMAAAD9DCciAAAAFVBMVEVHcEwYIygxSFJmlalGZnRXgJFxpbtFob5ZAAAABnRSTlMAEC+/U4KqNXrNAAAEq0lEQVR42u2dyXLaQBCGtcFZTlKcke3obFxIZyAJZy8U5xihfv9HSNmxUykbIWm2/g7uJ/iql79nRqPpKPprX34+1iLSVLtNcRGh7Nte/rdmd8kBvJKP1m4YfF/ltDU7fb5Euq3d5EzHvdqy0ITbSo81iu6TAbZTcl8sg6wqwHA6xTEYTiX5RMB4ewHjlSJcvFSEi5fIeGvXoehqMcErmEkXtOlOxdB2AVJvIsb24B0vNoeTZs2S4cCpV4qV+Y3t1A7Ob2wnYmvLObIi/Me2dkDnrWVsRbjOmzmB8+S8VByZD+dlruB8OC8Wd7ZGlus/zcuR5foW2jmqu75vZwWqu3pNvIljOHlQ3oGdt9scqSWvdsyRWvJWtDlSS96Kdo7UEseSMhUvdGumlrgUvEzAdLEvOLkPfPg6Uo6Vd/2+6bYCpisFTDcVMF0qfulypNC5oEsETBcLma72T4dUYXu6rYDpSgHTzQRMlwqYbhIGThbEFmG1+kxCwZms3GMh04WDkwLYvyzOArYCpislJF1ObBGGJ2Rh4UbSpWHhxjWyiYDpstBwY8Q4ETCdAtxwuYtFgS4HNtfxglJr0N0Cm+volbEO3MCSLXXghpWsEtywkp0pwclB/XDTsmRTNbgBRTHRg+svikwPrr9TaML1pl2iCdd3SqEL15N2sSpcT9opw/WknTKcrHALuqFNdq/tugNvQTdMT/ThzuhJqQ53JrAAuO7AEuA6K3YGgOsMLAKuS4oZcB337qYIuI5tdsqAO10TELjTNTGBwMmcDHeg7XD6XMeBO5DhTrguEbDrQHAfXUeCeyLDfWgTMQhO7shwRzKc5GS4GzLcgQzXkOHe6TAM7oZ1Bna2SbDgjmS45hPO1D49Z3ou8VmtbporC+43GW5FhsvBcMcIDPdEXs/NwXANefe1IMPNwXCHCAy3AsO15PO5GzDcie8kCVZHSHCnvs1hTtPvwB9JjuRvXysw3AH8vbXjCkJKlRHMZ/SWfDtiDoZbRFy47veSSm5QCXAL8P25I/ha5NmrwrUy3D34Ku4t+BJzC75h3XM3HX2rP4MqnP6fJOB/cPqfIJxSi0F3UbIC/zE35JEQrUXJoF9c99BCVez7A98KJe1SEa116M/yKq116I/8Gg1i8BMIKVPgtDR4xAtNJVJ8lTaGox5TqcFsMZgtsMyNfOktA7MFlbnRL+TNwGwBlcTgZcE9mC0GswVTEqPXIgMtmMxGM4QpVsN3ykswW4i2b/xyf4BiNZ/IkIHZ/HdWmzkbvuvBaqxQDZTeQPVgNxUnQ0pIgP5gPdRlyyxT3ylnP7nCX8o5mEgyo6abx5RzMn0pJqqb18bqajSpj8bqakZfXFND6kVIHA4PLLFucx/Vyp3bXO9YHc8PdhpVxzNSXSqw87nG7qJauZ/d6iqqrY9h1W5qtdl4QHNz9OUHzUnTbza5Hzb7daY/NOt1ZruJPJrVOXXlFc2qWJdF5NmM0Xbe0UzhfFaBZVirMGgm1RoinmY614Zy2ugNRBPQaSOFbhnUaWNcVymQPdsVlux5nf7jfJ7pkb3YdbfLCl2yF+d9r094DAD2ahfXvx5fCJtq9/OyuCAw/QFKcq6F8qyY3QAAAABJRU5ErkJggg=="
+            width="20px"><span style="color: #2398b8; font-size: large;"> 法規表單</span>
+        <br>
+        <img src="法規表單.png">
+    </div>
+    <div class="menu2" style="float:left;">
+        <ul>
+            <li>全部</li>
+            <li>課務相關</li>
+            <li>系徽</li>
+            <li>碩士論文</li>
+            <li>雙主修</li>
+            <li>轉系</li>
+            <li>課程先修申請</li>
+            <li>學士專題</li>
+            <li>實習</li>
+            <li>獎學金</li>
+        </ul>
+    </div>
+
+    <div class="main">
+        <p>專門課程三修外系申請表  <span style="float: right; color: #29afd4;">下載  ｜  預覽</span> </p>
+        <hr style="border: #197696 solid 2px;">
+        <p>系徽    <span style="float: right; color: #29afd4;">下載  ｜  預覽</span> </p>
+        <hr style="border: #197696 solid 2px;">
+        <p>資訊工程學系碩士班研究生碩士學位考試實施要點(含附表) 112.6.1修正通過    <span style="float: right; color: #29afd4;">下載  ｜  預覽</span> </p>
+        <hr style="border: #197696 solid 2px;">
+        <p>資訊工程學系研究成果評審要點(112..6.1修正通過)  <span style="float: right; color: #29afd4;">下載  ｜  預覽</span> </p>
+        <hr style="border: #197696 solid 2px;">
+        <p>論文摘要格式說明    <span style="float: right; color: #29afd4;">下載  ｜  預覽</span> </p>
+        <hr style="border: #197696 solid 2px;">
+        <p>研究生論文指導教授同意書    <span style="float: right; color: #29afd4;">下載  ｜  預覽</span> </p>
+        <hr style="border: #197696 solid 2px;">
+        <p>研究論文撰寫參考格式    <span style="float: right; color: #29afd4;">下載  ｜  預覽</span> </p>
+        <hr style="border: #197696 solid 2px;">
+        <p>資訊工程學系學士班雙主修修讀要點(112.7.20)<span style="float: right; color: #29afd4;">下載  ｜  預覽</span> </p>
+        <hr style="border: #197696 solid 2px;">
+        <p>資訊工程學系轉系生審核要點  <span style="float: right; color: #29afd4;">下載  ｜  預覽</span> </p>
+        <hr style="border: #197696 solid 2px;">
+
+        <div class="menu3">
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer" style="float: left;">
+        <img src="https://cs.ntcu.edu.tw/_app/assets/ntcuCs-183fa630.png" style="float: left; width: 180px;">
+        <pre style="text-align: left;">
+            臺中教育大學 資訊工程學系
+            地址：403514臺中市西區民生路140號
+            
+            Address：No. 140, Minsheng Rd, West District, Taichung City, 403514
+            
+            辦公室：求真樓2樓 K202
+            
+            傳真：04-22183580
+            
+            電話：04-22183582
+            E-mail：cis@mail.ntcu.edu.tw</pre>
+    </div>
+
+</body>
+
+</html>
