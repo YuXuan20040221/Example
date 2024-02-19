@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @media only screen and (max-width: 900px) {
+            .grid-container {
+                display: grid;
+                grid-template-columns: 100%;
+                grid-template-rows: 50px auto auto auto auto;
+                margin: 0;
+                background-color: #f3f3f3;
+            }
+
+            .top {
+                background-color: #59B1D4;
+                margin-bottom: 10px;
+                text-align: center;
+                padding: 5px;
+                font-size: large;
+                color: #ffffff;
+            }
+
+            .head {
+                display: grid;
+                grid-template-columns: 80%;
+                grid-template-rows: auto auto;
+                row-gap: 10px;
+                background-color: #ffffff;
+            }
+
+            .school {
+                background-color: #59B1D4;
+                font-size: 0px;
+                border-left: #59B1D4 solid 20px;
+                border-top: #59B1D4 solid 20px;
+                clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
+            }
+
+            .school b {
+                color: #F9EEB6;
+            }
+
+            .login p {
+                display: none;
+            }
+
+            .menu {
+                background-color: #ffffff;
+                display: grid;
+                grid-template-columns: 10% 80% 10%;
+            }
+
+            .title {
+                padding: 50px;
+            }
+
+            .menu2 {
+                background-color: #ffffff;
+                height: auto;
+            }
+
+            .menulist2 {
+                display: inline-block;
+                color: #000000;
+                margin: 20px;
+                border: #59B1D4 3px solid;
+                border-radius: 25px;
+                padding-top: 35px;
+                padding-bottom: 35px;
+                overflow-x: auto;
+            }
+
+            .list-item2 {
+                padding: 10px;
+                font-size: 20px;
+                width: auto;
+                text-align: left;
+                float: left;
+            }
+
+            .main {
+                background-color: #58829A;
+                border-style: none;
+                border-radius: 25px;
+                margin: 30px;
+                padding: 30px;
+            }
+
+            .foot {
+                background-color: #58829A;
+                color: #ffffff;
+            }
+        }
+
+        @media only screen and (min-width: 900px) {
+            .grid-container {
+                display: grid;
+                grid-template-columns: 25% 50% auto;
+                grid-template-rows: 20px auto auto auto 900px auto;
+                margin: 0;
+                background-color: #f3f3f3;
+            }
+
+            .top {
+                grid-column: 1/4;
+                background-color: #59B1D4;
+                margin-bottom: 10px;
+                text-align: center;
+                padding: 5px;
+                font-size: 0;
+            }
+
+            .head {
+                grid-column: 1/4;
+                display: grid;
+                grid-template-columns: 70% 30%;
+                row-gap: 10px;
+                background-color: #ffffff;
+            }
+
+            .school {
+                background-color: #59B1D4;
+                color: #F9EEB6;
+                border-left: #59B1D4 solid 20px;
+                border-top: #59B1D4 solid 20px;
+                clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
+            }
+
+            .login p {
+                text-align: right;
+                color: #2677A6;
+            }
+
+            .menu {
+                display: grid;
+                grid-template-columns: 5% 90% 5%;
+                grid-column: 1/4;
+                background-color: #ffffff;
+            }
+
+            .title {
+                grid-column: 1/4;
+                padding: 50px;
+            }
+
+            .menu2 {
+                display: block;
+                margin-inline: 30px;
+                border-radius: 25px;
+                background-color: #ffffff;
+                height: fit-content;
+            }
+
+            .menulist2 {
+                display: block;
+                color: #000000;
+                margin: 20px;
+                border: #59B1D4 3px solid;
+                border-radius: 25px;
+                padding-top: 35px;
+                padding-bottom: 35px;
+            }
+
+            .list-item2 {
+                padding: 10px;
+                font-size: 20px;
+                width: auto;
+                text-align: left;
+            }
+
+            .main {
+                grid-column: 2/4;
+                background-color: #58829A;
+                border-style: none;
+                border-radius: 25px;
+                margin: 30px;
+                padding: 30px;
+            }
+
+            .foot {
+                grid-column: 1/4;
+                background-color: #58829A;
+                color: #ffffff;
+            }
+        }
+
+        .login {
+            background-color: #ffffff;
+            padding-right: 10px;
+        }
+
+        .login img {
+            width: 50px;
+            float: right;
+            padding: 8px;
+        }
+
+        .login button {
+            width: 70px;
+            height: 45px;
+            float: right;
+            margin: 10px;
+            font-size: 20px;
+            color: #ffffff;
+            background-color: #2398b8;
+            border-radius: 7px;
+            border-style: none;
+        }
+
+        .menulist {
+            display: flex;
+            color: #87543E;
+            overflow-x: hidden;
+            /* 水平溢出時隱藏 */
+            -webkit-overflow-scrolling: touch;
+            /* GPT說是 支持 iOS 滚动效果 */
+            scroll-behavior: smooth;
+            /* 平滑滚动 */
+        }
+
+        .list-item {
+            flex: 0 0 auto;
+            /* 禁止元素伸縮，保持固定寬度 */
+            width: 150px;
+            margin: 10px;
+            font-size: x-large;
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 25px;
+            text-align: center;
+        }
+
+        .list-item:hover {
+            background-color: #59B1D4;
+            color: #F9EEB6;
+        }
+
+        .list-item2:active {
+            background-color: #59B1D4;
+            color: #ffffff;
+        }
+
+        .title a {
+            color: #59B1D4;
+            font-size: x-large;
+            font-weight: 900;
+            text-decoration: none;
+        }
+
+        .title a:hover {
+            color: #58829A;
+        }
+    </style>
+</head>
+
+<body class="grid-container">
+    <div class="top">
+        <a>繁體中文 Traditional Chinese</a> | <a>英文 English</a>
+    </div>
+    <div class="head">
+        <div class="school">
+            <b style="font-size: 20px;">國立臺中教育大學</b> <span>National Taichong University of Education</span><br>
+            <b style="font-size: 40px; letter-spacing: 5px;">資訊工程學系</b> <span>Department of Computer Science</span>
+        </div>
+        <div class="login">
+            <p><a>繁體中文 Traditional Chinese</a> | <a>英文 English</a></p>
+            <button>login</button>
+            <a href=""><img src="ntcu.png"></a>
+            <a href=""><img src="NTCUCS.png"></a>
+        </div>
+    </div>
+    <div class="menu">
+        <div onclick="showL()">
+            <!--我不會用svg...先借學校的程式用用 -->
+            <svg viewBox="0 0 20 20" fill="#59B1D4">
+                <path fill-rule="evenodd"
+                    d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                    clip-rule="evenodd"></path>
+            </svg>
+        </div>
+        <div class="menulist" id="menulist">
+            <div class="list-item"><b>訊息公告</b></div>
+            <div class="list-item"><b>系所成員</b></div>
+            <div class="list-item"><b>系所介紹</b></div>
+            <div class="list-item"><b>招生資訊</b></div>
+            <div class="list-item"><b>學生資訊</b></div>
+            <div class="list-item"><b>學術研究</b></div>
+            <div class="list-item"><b>活動紀錄</b></div>
+            <div class="list-item"><b>法規表單</b></div>
+            <div class="list-item"><b>獲獎公告</b></div>
+            <div class="list-item"><b>實習資訊</b></div>
+        </div>
+        <div onclick="showR()">
+            <!--我不會用svg...先借學校的程式用用 -->
+            <svg viewBox="0 0 20 20" fill="#59B1D4">
+                <path fill-rule="evenodd"
+                    d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                    clip-rule="evenodd"></path>
+            </svg>
+        </div>
+    </div>
+    <div class="title">
+        <div style="display: flex;">
+            <a href="">首頁</a> <svg viewBox="-5 -5 100 100" fill="#2398b8" width="30px" style="padding-inline: 10px;">
+                <polygon points="10,90 20,50 10,10 80,50" />
+            </svg> <a href=""> 法規表單</a>
+        </div>
+        <div>
+            <svg viewBox="0 0 200 50" width="400px" height="100px">
+                <polygon points="0,50 0,10 120,20 150,50" fill="#F2BC9D"></polygon>
+                <text x="20px" y="40px" fill="#ffffff">法規表單</text>
+            </svg>
+        </div>
+    </div>
+    <div class="menu2">
+        <div class="menulist2">
+            <div class="list-item2"><b>全部</b></div>
+            <div class="list-item2"><b>課務相關</b></div>
+            <div class="list-item2"><b>系徽</b></div>
+            <div class="list-item2"><b>碩士論文</b></div>
+            <div class="list-item2"><b>雙主修</b></div>
+            <div class="list-item2"><b>轉系</b></div>
+            <div class="list-item2"><b>課程先修申請</b></div>
+            <div class="list-item2"><b>學士專題</b></div>
+            <div class="list-item2"><b>實習</b></div>
+            <div class="list-item2"><b>獎學金</b></div>
+        </div>
+    </div>
+    <div class="main">
+        <div style="background-color: #ffffff ;padding: 20px; width: 95%; height: 95%; border-radius: 15px;">
+            <iframe src="CSS2-2-1.html" style="width: 100%; height: 90%; border-radius: 15px; border-style: none;"></iframe>
+        </div>
+    </div>
+
+    <div class="foot">
+        <img src="NTCUCS.png" style="float: left; width: 150px; padding: 15px;">
+        <pre style="text-align: left; float: left;">
+                臺中教育大學 資訊工程學系
+                地址：403514臺中市西區民生路140號
+                
+                Address：No. 140, Minsheng Rd, West District, Taichung City, 403514
+                
+                辦公室：求真樓2樓 K202
+                
+                傳真：04-22183580
+                
+                電話：04-22183582
+                E-mail：cis@mail.ntcu.edu.tw
+            </pre>
+    </div>
+
+    <script>
+        function showR() {
+            const menulist = document.getElementById("menulist");
+            menulist.scrollBy(500, 0); //移動500px
+        }
+
+        function showL() {
+            const menulist = document.getElementById("menulist");
+            menulist.scrollBy(-500, 0);
+        }
+    </script>
+</body>
+
+</html>

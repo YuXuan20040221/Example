@@ -4,76 +4,70 @@
 <head>
     <style>
         body {
-            background-color: #EEEEEE;
+            display: grid;
+            background-color: #f3f3f3;
+            grid-template-columns: auto auto;
+            grid-template-rows: auto auto;
+            gap: 5px;
         }
 
-        h1 {
-            background-image: url("https://tse2.mm.bing.net/th?id=OIP.Xt1148zaOvqQv-upLxbVDAHaNK&pid=Api&P=0&h=180");
-            text-align: center;
+        .intr {
+            display: grid;
+            background-color: #f4d644;
         }
 
-        div1 {
-            float: left;
-            width: 30%;
-            height: 100%;
+        .img {
+            background-color: #2a2e36;
+            padding: 20px;
+            grid-row: 1/3;
+            color: #f3f3f3;
+            text-align: left;
         }
 
-        div2 {
-            width: 60%;
-            height: 400px;
-            float: left;
-            background-color: #f9e6c6;
-            border-radius: 2dvw;
-            border-style: solid;
-            border-width: 5px;
-            border-color: #ffc260;
-            padding: 3%
+        .img img {
+            border: #ffffff 6px solid;
+            width: 100px;
         }
 
-        div1.img {
-            float: left;
-            width: 80%;
-        }
-
-        div1.h2 {
-            color: rgb(74, 57, 36);
-            float: left;
-            width: 80%;
-        }
-
-        div3 {
-            color: rgb(74, 57, 36);
-            float: left;
-            width: 80%;
-        }
-        div2.p {
-            float: center;
-            width: 80%;
+        .text {
+            color: rgb(31, 15, 62);
+            padding: 20px;
+            border: rgb(31, 15, 62) 1.5px solid;
+            margin: 10px;
         }
     </style>
 </head>
 
 <body>
-    <h1>這個漸層要怎麼辦???</h1>
-    <div1>
-        <img src="https://tse3.mm.bing.net/th?id=OIP.d5wMycxOfNl3UwwSpjrIyAHaJ5&pid=Api&P=0&h=180">
-        <div3>
-            <h2>蘇軾</h2>
-            <p>
-                字:子瞻<br>
-                號:東坡居士、鐵冠道人<br>
-                北宋時著名的文學家、政治家、藝術家。
-            </p>
-        </div3>
-    </div1>
-    <div2>
-        不知道要放啥先放首詩:<br>
-        <br>
-        三月七日，沙湖道中遇雨。雨具先去，同行皆狼狽，余獨不覺，已而遂晴，故作此詞。
-        <br><br>
-        莫聽穿林打葉聲，何妨吟嘯且徐行。竹杖芒鞋輕勝馬，誰怕？一蓑煙雨任平生。<br>
-        料峭春風吹酒醒，微冷，山頭斜照卻相迎。回首向來蕭瑟處，歸去，也無風雨也無晴。
-    </div2>
+    <div class="img">
+        <img src="https://cs.ntcu.edu.tw:1337/uploads/_d1c0c9a353.png">
+        <div>
+            實習年份：2023
+            <hr style="border-color: #F9EEB6;">
+            實習公司：煜興科技有限公司
+            <hr style="border-color: #F9EEB6;">
+            類別：學期實習
+            <hr style="border-color: #F9EEB6;">
+            系所：資工
+            <hr style="border-color: #F9EEB6;">
+        </div>
+    </div>
+    <div>
+        <div style="height: 20px;">
+
+        </div>
+        <div class="intr">
+            <h2>林家羽</h2>
+        </div>
+
+    </div>
+    <div class="text">
+        一開始抱著忐忑的心情去面試，經歷重重關卡後收到面試通過的通知， 突然就有點害怕去實習，不知道自己能不能做好，但是我覺得如果不去 實習，未來可能會後悔，於是就硬著頭皮開始上班。
+        前一個禮拜都在熟悉公司的環境，過了幾天主管開始丟作業給我寫， 再過了兩個月後，開始做 LINE BOT 專案的東西，在這裡一個禮拜要開一 次系統部的會議，確認現在做的方向沒有問題，在會議上也要盡量能丟
+        新的成果出來，或者在這個時間也可以提出目前遇到的難關，主管們會 給很實用的經驗。
+        我很慶幸自己做對了選擇，進入了實習，相比正職少了一份時間壓 力，除了可以更確認未來要走的方向，也學到了更多自我管理、自己學 習的能力，也能知道現在市場需要的甚麼。實習是一個很好在行業裡學
+        習的地方，主管也會熱心地傳授經驗，這些是在學校裡面沒有的。
+    </div>
 </body>
 
 </html>

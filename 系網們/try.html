@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <div class="menulist" id="menulist">
+    <div class="list-item">A</div>
+    <div class="list-item">B</div>
+    <div class="list-item">C</div>
+    <div class="list-item">D</div>
+    <div class="list-item">E</div>
+    <div class="list-item">F</div>
+  </div>
+
+  <!-- 向右显示按钮 -->
+  <button onclick="showNext()">向右显示</button>
+
+  <script>
+    const listItems = document.querySelectorAll('.list-item');
+    const maxVisibleItems = 3; // 初始显示的最大数量
+    let currentIndex = maxVisibleItems - 1; // 初始状态下当前索引为最大可见数量减1
+
+    // 隐藏超出初始显示数量的元素
+    for (let i = maxVisibleItems; i < listItems.length; i++) {
+      listItems[i].style.display = 'none';
+    }
+
+    // 显示下一个列表项
+    function showNext() {
+      if (currentIndex < listItems.length - 1) {
+        listItems[currentIndex + 1].style.display = 'block';
+        currentIndex++;
+      }
+    }
+  </script>
+</body>
+</html>
